@@ -1,0 +1,14 @@
+[build-system]
+build-backend = 'mesonpy'
+requires = ['meson-python']
+
+[project]
+name = 'testproject'
+version = '0.0.1'
+description = 'a test package with ctypes wrapper'
+readme = 'README.md'
+requires-python = '>=3.10'
+license = {file = 'LICENSE.txt'}
+authors = [
+  {name = 'Giuseppe Dilillo', email = 'peppedilillo@gmail.com'},
+]

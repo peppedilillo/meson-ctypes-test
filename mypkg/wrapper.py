@@ -3,7 +3,7 @@ import enum
 
 import numpy as np
 
-lib_path = "./libtest_ctypes.so"
+lib_path = "mylib.so"
 lib = ctypes.CDLL(lib_path)
 
 

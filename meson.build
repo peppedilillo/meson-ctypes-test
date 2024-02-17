@@ -1,5 +1,5 @@
 project('TestPackage', 'c')
-add_global_arguments('-D NDEBUG', language : 'c')
+add_global_arguments(language : 'c')
 
 py = import('python').find_installation()
 

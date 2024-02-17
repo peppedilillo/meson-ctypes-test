@@ -2,6 +2,7 @@ import ctypes
 import enum
 from pathlib import Path
 
+import numpy as np
 import numpy.typing as npt
 
 
@@ -24,6 +25,7 @@ def library_path(libname: str) -> str:
     return str(Path(__file__).parent / ".sharedlibs" / f"{libname}{suffix}")
 
 
+# Loads the C library.
 lib = ctypes.CDLL(library_path("libsharedlibname"))
 
 
@@ -52,9 +54,6 @@ def calculate_mean(array: npt.NDArray[np.int32]) -> float:
     """Runs the wrapped library's interface function checking for errors"""
     result = Result()
     length = len(array)
-
-    if array.dtype is not np.int32:
-        raise ValueError("Argument should be a numpy array with dtype 'int32'")
 
     c_array = array.ctypes.data_as(ctypes.POINTER(ctypes.c_int32))
     error = _clib_calculate_mean(ctypes.byref(result), c_array, length)

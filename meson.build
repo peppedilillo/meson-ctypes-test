@@ -1,18 +1,21 @@
-project('MyPkg', 'c')
+project('TestPackage', 'c')
 add_global_arguments('-D NDEBUG', language : 'c')
 
-py = import('python').find_installation(pure: false)
+py = import('python').find_installation()
 
 py.install_sources(
-    ['mypkg/wrapper.py'],
-    subdir: 'mypkg'
+  [
+    'pkgname/__init__.py',
+    'pkgname/wrapper.py',
+  ],
+  subdir: 'pkgname'
 )
 
-incdir = include_directories('source/include')
-sources = ['source/mylib.c']
-shared_library('mylib',
+incdir = include_directories('pkgname/c/include')
+sources = ['pkgname/c/mylib.c']
+shared_library('sharedlibname',
     sources,
     include_directories : incdir,
     install: true,
-    install_dir: py.get_install_dir() / 'mypkg'
+    install_dir: py.get_install_dir() / 'pkgname/.sharedlibs'
 )

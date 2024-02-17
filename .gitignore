@@ -1,4 +1,6 @@
 .DS_Store
-scripts/
+bin
+lib
+pyvenv.cfg
 __pycache__
 .idea

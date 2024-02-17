@@ -3,11 +3,12 @@ build-backend = 'mesonpy'
 requires = ['meson-python']
 
 [project]
-name = 'mypkg'
+name = 'pkgname'
 version = '0.0.1'
-description = 'a test package with ctypes wrapper'
+description = 'a test package'
 readme = 'README.md'
 requires-python = '>=3.10'
+dependencies = ['numpy']
 license = {file = 'LICENSE.txt'}
 authors = [
   {name = 'Giuseppe Dilillo', email = 'peppedilillo@gmail.com'},

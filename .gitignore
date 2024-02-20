@@ -1,6 +1,7 @@
 .DS_Store
 bin
 lib
+.venv
 pyvenv.cfg
 __pycache__
 .idea

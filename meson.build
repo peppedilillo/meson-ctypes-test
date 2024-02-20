@@ -15,9 +15,10 @@ py.install_sources(
 # compiles the shared library and puts it in the package installation folder
 incdir = include_directories('pkgname/c/include')
 sources = ['pkgname/c/mylib.c']
-shared_library('sharedlibname',
+shared_library('libname',
     sources,
     include_directories : incdir,
     install: true,
+    name_prefix: '',
     install_dir: py.get_install_dir() / 'pkgname/.sharedlibs'
 )

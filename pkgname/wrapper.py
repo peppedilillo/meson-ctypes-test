@@ -26,7 +26,7 @@ def library_path(libname: str) -> str:
 
 
 # Loads the C library.
-lib = ctypes.CDLL(library_path("libsharedlibname"))
+lib = ctypes.CDLL(library_path("libname"))
 
 
 class Result(ctypes.Structure):
